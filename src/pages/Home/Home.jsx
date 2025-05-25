@@ -3,23 +3,23 @@ import './Home.css';
 
 // Import all images
 //import tiemImage from '../assets/images/tiem.png';
-import logoImage from '../assets/images/logo.png';
-import chairsImage from '../assets/images/chairs.png';
-import pedicureImage from '../assets/images/pedicure.png';
-import manicureImage from '../assets/images/manicure.png';
-import nailEnhanceImage from '../assets/images/nailenhance.png';
-import nailArtImage from '../assets/images/nailart.png';
-import waxingImage from '../assets/images/waxing.png';
-import packageImage from '../assets/images/package.png';
-import nail1Image from '../assets/images/nail1.png';
-import nail2Image from '../assets/images/nail2.png';
-import nail3Image from '../assets/images/nail3.png';
-import nail4Image from '../assets/images/nail4.png';
-import nail5Image from '../assets/images/nail5.png';
-import nail6Image from '../assets/images/nail6.png';
-import nail8Image from '../assets/images/nail8.png';
-import nail9Image from '../assets/images/nail9.png';
-import mapImage from '../assets/images/map.png';
+import logoImage from '../../assets/images/logo.png';
+import chairsImage from '../../assets/images/chairs.png';
+import pedicureImage from '../../assets/images/pedicure.png';
+import manicureImage from '../../assets/images/manicure.png';
+import nailEnhanceImage from '../../assets/images/nailenhance.png';
+import nailArtImage from '../../assets/images/nailart.png';
+import waxingImage from '../../assets/images/waxing.png';
+import packageImage from '../../assets/images/package.png';
+import nail1Image from '../../assets/images/nail1.png';
+import nail2Image from '../../assets/images/nail2.png';
+import nail3Image from '../../assets/images/nail3.png';
+import nail4Image from '../../assets/images/nail4.png';
+import nail5Image from '../../assets/images/nail5.png';
+import nail6Image from '../../assets/images/nail6.png';
+import nail8Image from '../../assets/images/nail8.png';
+import nail9Image from '../../assets/images/nail9.png';
+import mapImage from '../../assets/images/map.png';
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -174,6 +174,14 @@ const Home = () => {
 
     return (
         <div className="home">
+            {/* Fixed Call Us Button */}
+            <div className="call-us-fixed">
+                <a href="tel:+19185742700" className="call-us-btn" aria-label="Call Tranquility Nails & Spa">
+                    <i className="fas fa-phone"></i>
+                    <span className="call-text">Call Us</span>
+                </a>
+            </div>
+
             {/* Navigation */}
             <nav className="navbar">
                 <div className="container">
@@ -435,11 +443,11 @@ const Home = () => {
                                 </div>
                                 <div className="info-item-luxury">
                                     <div className="info-icon">
-                                        <i className="fas fa-envelope"></i>
+                                        <i className="fab fa-facebook-f"></i>
                                     </div>
                                     <div className="info-text">
-                                        <h4>Email</h4>
-                                        <p>info@tranquilitynailspa.com</p>
+                                        <h4>Facebook</h4>
+                                        <p><a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer">Tranquility Nails & Spa</a></p>
                                     </div>
                                 </div>
                                 <div className="info-item-luxury">
@@ -540,16 +548,16 @@ const Home = () => {
                                 <div className="link-group">
                                     <h4>Connect</h4>
                                     <div className="social-media">
-                                        <a href="https://facebook.com/tranquilitynailspa" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                        <a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                                             <i className="fab fa-facebook-f"></i>
                                         </a>
-                                        <a href="https://instagram.com/tranquilitynailspa" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                        <a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                                             <i className="fab fa-instagram"></i>
                                         </a>
-                                        <a href="https://pinterest.com/tranquilitynailspa" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+                                        <a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
                                             <i className="fab fa-pinterest"></i>
                                         </a>
-                                        <a href="https://yelp.com/tranquilitynailspa" target="_blank" rel="noopener noreferrer" aria-label="Yelp">
+                                        <a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer" aria-label="Yelp">
                                             <i className="fab fa-yelp"></i>
                                         </a>
                                     </div>
