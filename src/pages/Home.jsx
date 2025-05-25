@@ -19,6 +19,7 @@ import nail5Image from '../assets/images/nail5.png';
 import nail6Image from '../assets/images/nail6.png';
 import nail8Image from '../assets/images/nail8.png';
 import nail9Image from '../assets/images/nail9.png';
+import mapImage from '../assets/images/map.png';
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -61,42 +62,36 @@ const Home = () => {
             id: 1,
             name: "Classic Manicure",
             image: manicureImage,
-            price: "$35",
             description: "Professional nail care with cuticle treatment and polish application"
         },
         {
             id: 2,
             name: "Luxury Pedicure",
             image: pedicureImage,
-            price: "$45",
             description: "Relaxing foot treatment with exfoliation and massage"
         },
         {
             id: 3,
-            name: "Gel Extensions",
+            name: "Acrylic Nails",
             image: nailEnhanceImage,
-            price: "$65",
-            description: "Long-lasting gel nail extensions with perfect finish"
+            description: "Long-lasting acrylic nail extensions with perfect finish"
         },
         {
             id: 4,
             name: "Nail Art Design",
             image: nailArtImage,
-            price: "$25+",
             description: "Custom artistic designs created by our skilled technicians"
         },
         {
             id: 5,
             name: "Waxing Services",
             image: waxingImage,
-            price: "$20+",
             description: "Professional hair removal services for smooth skin"
         },
         {
             id: 6,
             name: "Spa Packages",
             image: packageImage,
-            price: "$85+",
             description: "Complete wellness packages for ultimate relaxation"
         }
     ];
@@ -252,18 +247,38 @@ const Home = () => {
                             <h2>Experience Sanctuary of Beauty and Serenity</h2>
                             <p>Our skilled team is committed to providing personalized care, leaving you refreshed and your nails flawless after every visit. We prioritize both the elegance of your nails and your overall well-being.</p>
                             <p>Whether you're here for a quick touch-up, a luxurious manicure, or a creative nail design, our experts go above and beyond to exceed your expectations with every detail.</p>
-                            <div className="about-features">
-                                <div className="feature">
-                                    <i className="fas fa-award"></i>
-                                    <span>Professional Excellence</span>
+                            <div className="about-info">
+                                <div className="about-features">
+                                    <div className="feature">
+                                        <i className="fas fa-award"></i>
+                                        <span>Professional Excellence</span>
+                                    </div>
+                                    <div className="feature">
+                                        <i className="fas fa-heart"></i>
+                                        <span>Personalized Care</span>
+                                    </div>
+                                    <div className="feature">
+                                        <i className="fas fa-leaf"></i>
+                                        <span>Premium Products</span>
+                                    </div>
                                 </div>
-                                <div className="feature">
-                                    <i className="fas fa-heart"></i>
-                                    <span>Personalized Care</span>
+                                <div className="location-item">
+                                    <div className="location-icon">
+                                        <i className="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div className="location-details">
+                                        <h4>Visit Us</h4>
+                                        <p>4012 S Yale Ave, Tulsa, OK 74135</p>
+                                    </div>
                                 </div>
-                                <div className="feature">
-                                    <i className="fas fa-leaf"></i>
-                                    <span>Premium Products</span>
+                                <div className="location-item">
+                                    <div className="location-icon">
+                                        <i className="fas fa-clock"></i>
+                                    </div>
+                                    <div className="location-details">
+                                        <h4>Open Hours</h4>
+                                        <p>Mon-Sat: 9:30AM - 7:30PM<br />Sunday: 11:30AM - 6:00PM</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -294,7 +309,9 @@ const Home = () => {
                                 <div className="service-content">
                                     <h3>{service.name}</h3>
                                     <p>{service.description}</p>
-                                    <div className="service-price">{service.price}</div>
+                                    <a href="#booking" className="view-more-btn">
+                                        View Details <i className="fas fa-arrow-right"></i>
+                                    </a>
                                 </div>
                             </div>
                         ))}
@@ -320,6 +337,13 @@ const Home = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    <div className="gallery-cta">
+                        <a href="#contact" className="view-gallery-btn">
+                            View Full Gallery
+                            <i className="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -374,8 +398,22 @@ const Home = () => {
                 <div className="container">
                     <div className="contact-content-luxury">
                         <div className="contact-info-luxury">
-                            <span className="sub-heading">Visit Us</span>
-                            <h2>Book Your Appointment</h2>
+                            <span className="sub-heading">Book Your Appointment</span>
+                            <h2>Call Us Today</h2>
+                            <p className="contact-description">
+                                For the best service and immediate booking, we prefer you call us directly.
+                                Our friendly staff will help you schedule the perfect appointment.
+                            </p>
+
+                            {/* Prominent Phone CTA */}
+                            <div className="phone-cta">
+                                <div className="phone-number">
+                                    <i className="fas fa-phone"></i>
+                                    <a href="tel:+19185742700">(918) 574-2700</a>
+                                </div>
+                                <p className="phone-subtitle">Call now for instant booking</p>
+                            </div>
+
                             <div className="info-grid">
                                 <div className="info-item-luxury">
                                     <div className="info-icon">
@@ -383,16 +421,7 @@ const Home = () => {
                                     </div>
                                     <div className="info-text">
                                         <h4>Location</h4>
-                                        <p>123 Serenity Avenue<br />Relaxation District, Your City</p>
-                                    </div>
-                                </div>
-                                <div className="info-item-luxury">
-                                    <div className="info-icon">
-                                        <i className="fas fa-phone"></i>
-                                    </div>
-                                    <div className="info-text">
-                                        <h4>Phone</h4>
-                                        <p>(555) 123-4567</p>
+                                        <p>4012 S Yale Ave, Tulsa, OK 74135</p>
                                     </div>
                                 </div>
                                 <div className="info-item-luxury">
@@ -401,7 +430,7 @@ const Home = () => {
                                     </div>
                                     <div className="info-text">
                                         <h4>Hours</h4>
-                                        <p>Mon-Sat: 9AM-7PM<br />Sunday: 10AM-5PM</p>
+                                        <p>Mon-Sat: 9:30AM - 7:30PM<br />Sunday: 11:30AM - 6:00PM</p>
                                     </div>
                                 </div>
                                 <div className="info-item-luxury">
@@ -413,12 +442,22 @@ const Home = () => {
                                         <p>info@tranquilitynailspa.com</p>
                                     </div>
                                 </div>
+                                <div className="info-item-luxury">
+                                    <div className="info-icon">
+                                        <i className="fas fa-comments"></i>
+                                    </div>
+                                    <div className="info-text">
+                                        <h4>Walk-ins Welcome</h4>
+                                        <p>Subject to availability</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div className="booking-form-luxury" id="booking">
                             <form onSubmit={handleFormSubmit}>
-                                <h3>Schedule Your Visit</h3>
+                                <h3>Or Send Us a Message</h3>
+                                <p className="form-subtitle">Can't call right now? Send us your details and we'll contact you.</p>
                                 <div className="form-row">
                                     <div className="form-group">
                                         <input type="text" name="name" placeholder="Full Name" required />
@@ -436,7 +475,7 @@ const Home = () => {
                                             <option value="">Select Service</option>
                                             <option value="manicure">Classic Manicure</option>
                                             <option value="pedicure">Luxury Pedicure</option>
-                                            <option value="nail-extensions">Gel Extensions</option>
+                                            <option value="nail-extensions">Acrylic Nails</option>
                                             <option value="nail-art">Nail Art Design</option>
                                             <option value="waxing">Waxing Services</option>
                                             <option value="spa-package">Spa Package</option>
@@ -467,12 +506,15 @@ const Home = () => {
                     <div className="footer-content-luxury">
                         <div className="footer-main">
                             <div className="footer-logo">
-                                <img src={logoImage} alt="Tranquility Logo" />
-                                <div className="logo-text">
-                                    <h2>TRANQUILITY</h2>
-                                    <p>Nails & Spa</p>
+                                <div className="logo">
+                                    <img src={logoImage} alt="Tranquility Logo" />
+                                    <div className="logo-text">
+                                        <h2>TRANQUILITY</h2>
+                                        <p>Nails & Spa</p>
+                                    </div>
                                 </div>
                                 <p className="footer-description">Where beauty meets serenity. Experience the ultimate in nail care and relaxation at our luxury spa.</p>
+                                <img src={mapImage} alt="Tranquility Location" />
                             </div>
                             <div className="footer-links">
                                 <div className="link-group">
@@ -523,7 +565,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="footer-bottom">
-                        <p>&copy; 2025 Tranquility Nails & Spa. All Rights Reserved.</p>
+                        <p>&copy; 2018 Tranquility Nails & Spa. All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>
