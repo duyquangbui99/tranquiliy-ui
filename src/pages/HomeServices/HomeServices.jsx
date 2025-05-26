@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
 import Navigation from '../../components/Navigation/Navigation';
 import Footer from '../../components/Footer/Footer';
 import menuPedicuresImage from '../../assets/images/menu/menu-pedicures.png';
@@ -11,6 +10,18 @@ import './HomeServices.css';
 
 const HomeServices = () => {
     const [activeCategory, setActiveCategory] = useState('pedicure');
+    const servicesMainRef = useRef(null);
+
+    const handleCategoryClick = (categoryId) => {
+        setActiveCategory(categoryId);
+        // Scroll to the top of services section with offset for header
+        if (servicesMainRef.current) {
+            const yOffset = -100; // Offset to account for fixed header
+            const element = servicesMainRef.current;
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    };
 
     const categories = [
         {
@@ -107,7 +118,7 @@ const HomeServices = () => {
                 price: '$70'
             },
             {
-                name: 'Jelly Spa Pedicure',
+                name: 'Galaxy Spa Pedicure',
                 description: 'Jelly spa bath soak, hydrating cleanser, sugar scrub for exfoliating nourishing mask on feet and cooling gel on legs, massage cream and hot stone, paraffin wax finish, plus relaxing arm and shoulder massage.',
                 price: '$75'
             },
@@ -271,8 +282,15 @@ const HomeServices = () => {
         <div className="home-services">
             {/* Navigation */}
             <Navigation />
+            {/* Fixed Call Us Button */}
+            <div className="call-us-fixed">
+                <a href="tel:+19185742700" className="call-us-btn" aria-label="Call Tranquility Nails & Spa">
+                    <i className="fas fa-phone"></i>
+                    <span className="call-text">Call Us</span>
+                </a>
+            </div>
             {/* Header */}
-            <div className="services-header">
+            <div id="services" className="services-header2">
                 <span className="sub-heading">Our Services</span>
                 <h1>Premium Nail & Spa Treatments</h1>
                 <p>Experience our comprehensive range of professional services designed to enhance your natural beauty and provide ultimate relaxation</p>
@@ -288,7 +306,7 @@ const HomeServices = () => {
                                 <div
                                     key={category.id}
                                     className={`category-item ${activeCategory === category.id ? 'active' : ''}`}
-                                    onClick={() => setActiveCategory(category.id)}
+                                    onClick={() => handleCategoryClick(category.id)}
                                 >
                                     <div className="category-icon">
                                         <i className={category.icon}></i>
@@ -300,12 +318,12 @@ const HomeServices = () => {
                     </div>
 
                     {/* Services Content - Right Side */}
-                    <div className="services-main">
+                    <div className="services-main" ref={servicesMainRef}>
                         <div className="services-content">
                             <div className="services-grid">
                                 {services[activeCategory]?.map((service, index) => (
                                     <div key={index} className="service-item">
-                                        <div className="service-header">
+                                        <div className="service-header2">
                                             <h3 className="service-name">{service.name}</h3>
                                             <span className="service-price">{service.price}</span>
                                         </div>
@@ -335,7 +353,7 @@ const HomeServices = () => {
                 </div>
 
                 {/* Call to Action */}
-                <div className="services-cta">
+                <div id="contact" className="services-cta">
                     <h3>Ready to Book Your Appointment?</h3>
                     <p>Call us today to schedule your perfect nail and spa experience</p>
                     <a href="tel:+19185742700" className="cta-button">

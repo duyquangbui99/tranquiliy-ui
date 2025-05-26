@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import logoImage from '../../assets/images/logo.png';
 import './Navigation.css';
 
 const Navigation = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     // Sticky navbar effect
     useEffect(() => {
@@ -24,23 +26,63 @@ const Navigation = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleNavClick = (e, path) => {
+        e.preventDefault();
+        const currentPath = window.location.pathname;
+
+        if (path.includes('#')) {
+            const [route, hash] = path.split('#');
+
+            if (route === '/') {
+                // Handle home page sections
+                if (currentPath !== '/') {
+                    navigate('/');
+                    setTimeout(() => {
+                        const element = document.getElementById(hash);
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }, 100);
+                } else {
+                    const element = document.getElementById(hash);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            } else {
+                // Handle other routes with hash (like /services#services)
+                navigate(route);
+                setTimeout(() => {
+                    const element = document.getElementById(hash);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
+        } else {
+            // Handle routes without hash
+            navigate(path);
+        }
+        setIsMobileMenuOpen(false);
+    };
+
     return (
         <nav className="navbar">
             <div className="container">
-                <div className="logo">
+                <Link to="/#home" onClick={(e) => handleNavClick(e, '/#home')} className="logo">
                     <img src={logoImage} alt="Tranquility Logo" />
                     <div className="logo-text">
                         <h1>TRANQUILITY</h1>
                         <p>Nails & Spa</p>
                     </div>
-                </div>
+                </Link>
                 <div className="nav-items">
                     <ul className="menu">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><Link to="/#home" onClick={(e) => handleNavClick(e, '/#home')}>Home</Link></li>
+                        <li><a href="/#about" onClick={(e) => handleNavClick(e, '/#about')}>About</a></li>
+                        <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Services</Link></li>
+                        <li><a href="/#gallery" onClick={(e) => handleNavClick(e, '/#gallery')}>Gallery</a></li>
+                        <li><a href="#contact" onClick={(e) => handleNavClick(e, '#contact')}>Contact</a></li>
                     </ul>
                     <a href="#booking" className="book-btn">Book Appointment</a>
                     <div
@@ -62,11 +104,11 @@ const Navigation = () => {
                         <i className="fas fa-times"></i>
                     </div>
                     <ul className="menu">
-                        <li><a href="#home" onClick={() => setIsMobileMenuOpen(false)}>Home</a></li>
-                        <li><a href="#about" onClick={() => setIsMobileMenuOpen(false)}>About</a></li>
-                        <li><a href="#services" onClick={() => setIsMobileMenuOpen(false)}>Services</a></li>
-                        <li><a href="#gallery" onClick={() => setIsMobileMenuOpen(false)}>Gallery</a></li>
-                        <li><a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a></li>
+                        <li><a href="/#home" onClick={(e) => handleNavClick(e, '/#home')}>Home</a></li>
+                        <li><a href="/#about" onClick={(e) => handleNavClick(e, '/#about')}>About</a></li>
+                        <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Services</Link></li>
+                        <li><a href="/#gallery" onClick={(e) => handleNavClick(e, '/#gallery')}>Gallery</a></li>
+                        <li><a href="/#contact" onClick={(e) => handleNavClick(e, '/#contact')}>Contact</a></li>
                     </ul>
                     <a href="#booking" className="book-btn" onClick={() => setIsMobileMenuOpen(false)}>Book Appointment</a>
                 </div>

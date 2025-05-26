@@ -286,8 +286,8 @@ const Home = () => {
                         ))}
                     </div>
 
-                    <div className="gallery-cta">
-                        <Link to="/services" className="view-gallery-btn">
+                    <div className="home-gallery-cta">
+                        <Link to="/gallery" className="view-gallery-btn">
                             View Full Gallery
                             <i className="fas fa-arrow-right"></i>
                         </Link>

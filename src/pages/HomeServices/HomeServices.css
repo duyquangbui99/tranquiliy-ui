@@ -35,7 +35,7 @@
 }
 
 /* Header */
-.services-header {
+.services-header2 {
     text-align: center;
     margin-bottom: 40px;
     padding: 40px var(--spacing-lg);
@@ -52,7 +52,7 @@
     align-items: center;
 }
 
-.services-header .sub-heading {
+.services-header2 .sub-heading {
     color: var(--primary-brown);
     font-weight: 600;
     letter-spacing: 3px;
@@ -62,7 +62,7 @@
     display: block;
 }
 
-.services-header h1 {
+.services-header2 h1 {
     font-size: 3.5rem;
     color: var(--text-primary);
     margin-bottom: var(--spacing-lg);
@@ -72,7 +72,7 @@
     max-width: 800px;
 }
 
-.services-header p {
+.services-header2 p {
     color: var(--text-secondary);
     font-size: 1.2rem;
     max-width: 800px;
@@ -169,12 +169,6 @@
     /* Prevents grid blowout */
 }
 
-.services-content {
-    background: var(--color-white);
-    border-radius: var(--radius-card);
-    box-shadow: 0 4px 15px var(--shadow-light);
-    padding: var(--spacing-xl);
-}
 
 .services-grid {
     display: grid;
@@ -216,7 +210,7 @@
     opacity: 1;
 }
 
-.service-header {
+.service-header2 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -316,7 +310,8 @@
 /* Call to Action */
 .services-cta {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 40px;
+    margin-bottom: 20px;
     padding: var(--spacing-xxl);
     background: var(--gradient-primary);
     border-radius: var(--radius-card);
@@ -401,20 +396,20 @@
         transform: translateY(-3px);
     }
 
-    .services-header {
+    .services-header2 {
         padding: 40px var(--spacing-lg);
         min-height: 250px;
     }
 
-    .services-header h1 {
+    .services-header2 h1 {
         font-size: 2.5rem;
     }
 
-    .services-header p {
+    .services-header2 p {
         font-size: 1.1rem;
     }
 
-    .service-header {
+    .service-header2 {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing-sm);
@@ -466,12 +461,12 @@
         width: 100%;
     }
 
-    .services-header {
+    .services-header2 {
         padding: 30px var(--spacing-md);
         min-height: 200px;
     }
 
-    .services-header h1 {
+    .services-header2 h1 {
         font-size: 2rem;
     }
 

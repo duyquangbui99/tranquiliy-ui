@@ -440,7 +440,7 @@
     font-size: 24px;
 }
 
-.gallery-cta {
+.home-gallery-cta {
     text-align: center;
     margin-top: var(--spacing-xxl);
 }
@@ -538,6 +538,10 @@
     border-radius: var(--radius-card);
     box-shadow: 0 10px 40px var(--shadow-light);
     transition: all 0.3s ease-in-out;
+}
+
+.testimonial-luxury :first {
+    margin-left: 3px;
 }
 
 .testimonial-luxury:hover {
