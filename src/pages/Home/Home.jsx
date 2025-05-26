@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Navigation from '../../components/Navigation/Navigation';
+import Footer from '../../components/Footer/Footer';
 import './Home.css';
 
 // Import all images
-//import tiemImage from '../assets/images/tiem.png';
-import logoImage from '../../assets/images/logo.png';
 import chairsImage from '../../assets/images/chairs.png';
 import pedicureImage from '../../assets/images/pedicure.png';
 import manicureImage from '../../assets/images/manicure.png';
@@ -19,41 +20,40 @@ import nail5Image from '../../assets/images/nail5.png';
 import nail6Image from '../../assets/images/nail6.png';
 import nail8Image from '../../assets/images/nail8.png';
 import nail9Image from '../../assets/images/nail9.png';
-import mapImage from '../../assets/images/map.png';
+
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const testimonials = [
         {
             id: 1,
-            text: "The atmosphere at Tranquility is so peaceful and relaxing. My nails have never looked better, and the staff is incredibly professional. I look forward to my monthly visits!",
-            name: "Sarah Johnson"
+            text: "I've been coming to Tranquility for 3 years and they never disappoint! The gel manicures last for weeks and the staff always remembers my preferences. It's my monthly self-care ritual!",
+            name: "Jessica Martinez"
         },
         {
             id: 2,
-            text: "I've been coming here for over a year, and the service is consistently excellent. The attention to detail makes me feel pampered every time.",
-            name: "Michael Chen"
+            text: "Best pedicure in Tulsa! The massage chairs are so relaxing and they take their time with the cuticle work. My feet feel amazing after every visit. Highly recommend!",
+            name: "Amanda Thompson"
         },
         {
             id: 3,
-            text: "Their nail art is absolutely stunning! The technicians are true artists who listen to what you want and deliver beyond expectations.",
-            name: "John Doe"
+            text: "The nail art here is incredible! I brought in a Pinterest photo and they recreated it perfectly. The attention to detail is amazing and the colors are so vibrant.",
+            name: "Rachel Kim"
         }, {
             id: 4,
-            text: "The atmosphere at Tranquility is so peaceful and relaxing. My nails have never looked better, and the staff is incredibly professional. I look forward to my monthly visits!",
-            name: "John Smith"
+            text: "Clean, professional, and friendly service every time. I love that they sterilize everything properly and the salon always smells fresh. My nails grow so much healthier since coming here.",
+            name: "Lisa Chen"
         },
         {
             id: 5,
-            text: "I've been coming here for over a year, and the service is consistently excellent. The attention to detail makes me feel pampered every time.",
-            name: "John Cena"
+            text: "The dip powder manicures here last me almost a month! Great value for the quality. The technicians are skilled and the atmosphere is so calming. Perfect place to unwind.",
+            name: "Maria Garcia"
         },
         {
             id: 6,
-            text: "Their nail art is absolutely stunning! The technicians are true artists who listen to what you want and deliver beyond expectations.",
-            name: "Emily Rodriguez"
+            text: "I'm so picky about my nails but this place gets it right every time. They listen to what you want and give honest advice about what will work best. Love the results!",
+            name: "Ashley Williams"
         }
     ];
 
@@ -137,22 +137,7 @@ const Home = () => {
     // Calculate slide offset for CSS variable
     const slideOffset = currentSlide;
 
-    // Sticky navbar effect
-    useEffect(() => {
-        const handleScroll = () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.padding = '10px 0';
-                navbar.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.padding = '15px 0';
-                navbar.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
-            }
-        };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     // Form submission handler
     const handleFormSubmit = (e) => {
@@ -183,53 +168,7 @@ const Home = () => {
             </div>
 
             {/* Navigation */}
-            <nav className="navbar">
-                <div className="container">
-                    <div className="logo">
-                        <img src={logoImage} alt="Tranquility Logo" />
-                        <div className="logo-text">
-                            <h1>TRANQUILITY</h1>
-                            <p>Nails & Spa</p>
-                        </div>
-                    </div>
-                    <div className="nav-items">
-                        <ul className="menu">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#gallery">Gallery</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                        <a href="#booking" className="book-btn">Book Appointment</a>
-                        <div
-                            className="mobile-menu-btn"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        >
-                            <i className="fas fa-bars"></i>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Mobile Menu */}
-                {isMobileMenuOpen && (
-                    <div className="mobile-menu active">
-                        <div
-                            className="close-menu"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            <i className="fas fa-times"></i>
-                        </div>
-                        <ul className="menu">
-                            <li><a href="#home" onClick={() => setIsMobileMenuOpen(false)}>Home</a></li>
-                            <li><a href="#about" onClick={() => setIsMobileMenuOpen(false)}>About</a></li>
-                            <li><a href="#services" onClick={() => setIsMobileMenuOpen(false)}>Services</a></li>
-                            <li><a href="#gallery" onClick={() => setIsMobileMenuOpen(false)}>Gallery</a></li>
-                            <li><a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a></li>
-                        </ul>
-                        <a href="#booking" className="book-btn" onClick={() => setIsMobileMenuOpen(false)}>Book Appointment</a>
-                    </div>
-                )}
-            </nav>
+            <Navigation />
 
             {/* Hero Section */}
             <section id="home" className="hero">
@@ -317,9 +256,9 @@ const Home = () => {
                                 <div className="service-content">
                                     <h3>{service.name}</h3>
                                     <p>{service.description}</p>
-                                    <a href="#booking" className="view-more-btn">
+                                    <Link to="/services" className="view-more-btn">
                                         View Details <i className="fas fa-arrow-right"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         ))}
@@ -348,10 +287,10 @@ const Home = () => {
                     </div>
 
                     <div className="gallery-cta">
-                        <a href="#contact" className="view-gallery-btn">
+                        <Link to="/services" className="view-gallery-btn">
                             View Full Gallery
                             <i className="fas fa-arrow-right"></i>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -509,74 +448,7 @@ const Home = () => {
             </section>
 
             {/* Footer */}
-            <footer className="footer-luxury">
-                <div className="container">
-                    <div className="footer-content-luxury">
-                        <div className="footer-main">
-                            <div className="footer-logo">
-                                <div className="logo">
-                                    <img src={logoImage} alt="Tranquility Logo" />
-                                    <div className="logo-text">
-                                        <h2>TRANQUILITY</h2>
-                                        <p>Nails & Spa</p>
-                                    </div>
-                                </div>
-                                <p className="footer-description">Where beauty meets serenity. Experience the ultimate in nail care and relaxation at our luxury spa.</p>
-                                <img src={mapImage} alt="Tranquility Location" />
-                            </div>
-                            <div className="footer-links">
-                                <div className="link-group">
-                                    <h4>Quick Links</h4>
-                                    <ul>
-                                        <li><a href="#home">Home</a></li>
-                                        <li><a href="#about">About</a></li>
-                                        <li><a href="#services">Services</a></li>
-                                        <li><a href="#gallery">Gallery</a></li>
-                                        <li><a href="#contact">Contact</a></li>
-                                    </ul>
-                                </div>
-                                <div className="link-group">
-                                    <h4>Services</h4>
-                                    <ul>
-                                        <li><a href="#services">Manicures</a></li>
-                                        <li><a href="#services">Pedicures</a></li>
-                                        <li><a href="#services">Nail Extensions</a></li>
-                                        <li><a href="#services">Nail Art</a></li>
-                                        <li><a href="#services">Spa Treatments</a></li>
-                                    </ul>
-                                </div>
-                                <div className="link-group">
-                                    <h4>Connect</h4>
-                                    <div className="social-media">
-                                        <a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                                            <i className="fab fa-facebook-f"></i>
-                                        </a>
-                                        <a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                                            <i className="fab fa-instagram"></i>
-                                        </a>
-                                        <a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-                                            <i className="fab fa-pinterest"></i>
-                                        </a>
-                                        <a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer" aria-label="Yelp">
-                                            <i className="fab fa-yelp"></i>
-                                        </a>
-                                    </div>
-                                    <div className="newsletter">
-                                        <h5>Stay Updated</h5>
-                                        <div className="newsletter-form">
-                                            <input type="email" placeholder="Your Email" />
-                                            <button type="submit"><i className="fas fa-arrow-right"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="footer-bottom">
-                        <p>&copy; 2018 Tranquility Nails & Spa. All Rights Reserved.</p>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };
