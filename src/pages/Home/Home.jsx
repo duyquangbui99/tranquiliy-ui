@@ -12,14 +12,14 @@ import nailEnhanceImage from '../../assets/images/nailenhance.png';
 import nailArtImage from '../../assets/images/nailart.png';
 import waxingImage from '../../assets/images/waxing.png';
 import packageImage from '../../assets/images/package.png';
-import nail1Image from '../../assets/images/nail1.png';
-import nail2Image from '../../assets/images/nail2.png';
-import nail3Image from '../../assets/images/nail3.png';
-import nail4Image from '../../assets/images/nail4.png';
-import nail5Image from '../../assets/images/nail5.png';
-import nail6Image from '../../assets/images/nail6.png';
-import nail8Image from '../../assets/images/nail8.png';
-import nail9Image from '../../assets/images/nail9.png';
+import nail1Image from '../../assets/images/gallery/gallery1.png';
+import nail2Image from '../../assets/images/gallery/gallery2.png';
+import nail3Image from '../../assets/images/gallery/gallery3.png';
+import nail4Image from '../../assets/images/gallery/gallery4.png';
+import nail5Image from '../../assets/images/gallery/gallery5.png';
+import nail6Image from '../../assets/images/gallery/gallery6.png';
+import nail8Image from '../../assets/images/gallery/gallery8.png';
+import nail9Image from '../../assets/images/gallery/gallery9.png';
 
 
 const Home = () => {
