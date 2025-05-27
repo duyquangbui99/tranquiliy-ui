@@ -74,7 +74,7 @@ const Footer = () => {
                                     <li><a href="/#about" onClick={(e) => handleNavClick(e, '/#about')}>About</a></li>
                                     <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Services</Link></li>
                                     <li><Link to="/gallery" onClick={() => setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100)}>Gallery</Link></li>
-                                    <li><a href="/#contact" onClick={(e) => handleNavClick(e, '/#contact')}>Contact</a></li>
+                                    <li><a href="#contact" onClick={(e) => handleNavClick(e, '#contact')}>Contact</a></li>
                                 </ul>
                             </div>
                             <div className="link-group">
