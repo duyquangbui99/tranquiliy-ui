@@ -97,11 +97,19 @@ const Navigation = () => {
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
                 <div className="mobile-menu active">
-                    <div
-                        className="close-menu"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                        <i className="fas fa-times"></i>
+                    <div>
+                        <div className='logo'>
+                            <div className="logo-text">
+                                <h1>TRANQUILITY</h1>
+                                <p>Nails & Spa</p>
+                            </div>
+                        </div>
+                        <div
+                            className="close-menu"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            <i className="fas fa-times"></i>
+                        </div>
                     </div>
                     <ul className="menu">
                         <li><a href="/#home" onClick={(e) => handleNavClick(e, '/#home')}>Home</a></li>
