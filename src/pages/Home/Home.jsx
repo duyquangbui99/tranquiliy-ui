@@ -84,14 +84,14 @@ const Home = () => {
             id: 4,
             name: "Solar Nails (Acrylic)",
             image: nailArtImage,
-            description: "Custom artistic designs created by our skilled technicians",
-            category: "gel"
+            description: "Durable solar nail extensions with natural pink and white finish",
+            category: "solar"
         },
         {
             id: 5,
             name: "Dipping Powder",
             image: packageImage,
-            description: "Complete wellness packages for ultimate relaxation",
+            description: "Long-lasting dipping powder nails with vibrant colors and strength",
             category: "dipping"
         },
         {

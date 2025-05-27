@@ -50,10 +50,9 @@ const HomeServices = () => {
             description: 'Long-lasting acrylic nail extensions'
         },
         {
-            id: 'gel',
-            name: 'Gel Nails',
+            id: 'solar',
+            name: 'Solar Nails',
             icon: 'fas fa-star',
-
             description: 'Durable gel polish and nail enhancements'
         },
         {
@@ -184,7 +183,7 @@ const HomeServices = () => {
                 price: '$55+'
             }
         ],
-        gel: [
+        solar: [
             {
                 name: 'Solar Nails - Clear Pink Solar - Full Set',
                 price: '$50+'
