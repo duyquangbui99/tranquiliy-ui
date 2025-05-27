@@ -41,7 +41,7 @@
     padding: 40px var(--spacing-lg);
     position: relative;
     background-color: var(--bg-primary);
-    background-image: url('../../assets/images/menu/service-bg.png');
+    background-image: url('../../assets/images/menu/service-bg3.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,9 +74,9 @@
 }
 
 .services-header2 p {
-    color: var(--text-secondary);
     font-size: 1.2rem;
-    max-width: 800px;
+    color: var(--text-secondary);
+    max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
 }

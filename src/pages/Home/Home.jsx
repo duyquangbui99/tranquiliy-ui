@@ -84,7 +84,7 @@ const Home = () => {
         },
         {
             id: 5,
-            name: "Waxing Services",
+            name: "Waxing & Threading",
             image: waxingImage,
             description: "Professional hair removal services for smooth skin"
         },
@@ -287,7 +287,7 @@ const Home = () => {
                     </div>
 
                     <div className="home-gallery-cta">
-                        <Link to="/gallery" className="view-gallery-btn">
+                        <Link to="/gallery" className="view-gallery-btn" onClick={() => window.scrollTo(0, 0)}>
                             View Full Gallery
                             <i className="fas fa-arrow-right"></i>
                         </Link>

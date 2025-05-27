@@ -84,7 +84,7 @@ const Navigation = () => {
                         <li><a href="/#gallery" onClick={(e) => handleNavClick(e, '/#gallery')}>Gallery</a></li>
                         <li><a href="#contact" onClick={(e) => handleNavClick(e, '#contact')}>Contact</a></li>
                     </ul>
-                    <a href="#booking" className="book-btn">Book Appointment</a>
+                    <a href="#contact" className="book-btn">Book Appointment</a>
                     <div
                         className="mobile-menu-btn"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -110,7 +110,7 @@ const Navigation = () => {
                         <li><a href="/#gallery" onClick={(e) => handleNavClick(e, '/#gallery')}>Gallery</a></li>
                         <li><a href="/#contact" onClick={(e) => handleNavClick(e, '/#contact')}>Contact</a></li>
                     </ul>
-                    <a href="#booking" className="book-btn" onClick={() => setIsMobileMenuOpen(false)}>Book Appointment</a>
+                    <a href="#contact" className="book-btn" onClick={() => setIsMobileMenuOpen(false)}>Book Appointment</a>
                 </div>
             )}
         </nav>

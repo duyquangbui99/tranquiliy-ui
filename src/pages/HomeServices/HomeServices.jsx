@@ -1,11 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Navigation from '../../components/Navigation/Navigation';
 import Footer from '../../components/Footer/Footer';
-import menuPedicuresImage from '../../assets/images/menu/menu-pedicures.png';
-import menuManicuresImage from '../../assets/images/menu/menu-manicures.png';
-import menuAcrylicDipImage from '../../assets/images/menu/menu-acrylicdip.png';
-import menuAdditionalServicesImage from '../../assets/images/menu/menu-additonalServices.png';
-import menuComplementaryImage from '../../assets/images/menu/menu-complementary.png';
 import './HomeServices.css';
 
 const HomeServices = () => {
@@ -28,49 +23,46 @@ const HomeServices = () => {
             id: 'pedicure',
             name: 'Pedicure Services',
             icon: 'fas fa-spa',
-            image: menuPedicuresImage,
             description: 'Luxurious foot treatments for ultimate relaxation'
         },
         {
             id: 'manicure',
             name: 'Manicure Services',
             icon: 'fas fa-hand-sparkles',
-            image: menuManicuresImage,
             description: 'Professional nail care with elegant finishing'
-        },
-        {
-            id: 'combo',
-            name: 'Combo Packages',
-            icon: 'fas fa-gem',
-            image: menuComplementaryImage,
-            description: 'Complete manicure and pedicure combinations'
         },
         {
             id: 'acrylic',
             name: 'Acrylic Nails',
             icon: 'fas fa-magic',
-            image: menuAcrylicDipImage,
             description: 'Long-lasting acrylic nail extensions'
         },
         {
             id: 'gel',
             name: 'Gel Nails',
             icon: 'fas fa-star',
-            image: menuAcrylicDipImage,
+
             description: 'Durable gel polish and nail enhancements'
         },
         {
             id: 'dipping',
             name: 'Dipping Powder',
             icon: 'fas fa-palette',
-            image: menuAcrylicDipImage,
+
             description: 'Modern dipping powder nail treatments'
+        },
+        {
+            id: 'waxing',
+            name: 'Waxing & Threading',
+            icon: 'fas fa-gem',
+
+            description: 'Complete manicure and pedicure combinations'
         },
         {
             id: 'kids',
             name: "Kid's Menu",
             icon: 'fas fa-heart',
-            image: menuAdditionalServicesImage,
+
             description: 'Special services designed for children'
         }
     ];
@@ -148,23 +140,6 @@ const HomeServices = () => {
                 name: "Kid's Manicure",
                 description: 'Salt soak, finger nails trims, cuticle care, hand and arm massage followed with hot stone. Finished with paraffin to soften your hands.',
                 price: '$15'
-            }
-        ],
-        combo: [
-            {
-                name: 'Classic Combo',
-                description: 'Classic Manicure + Classic Pedicure',
-                price: '$45'
-            },
-            {
-                name: 'Pamper Me Combo',
-                description: 'Pamper Me Manicure + Pamper Me Pedicure',
-                price: '$65'
-            },
-            {
-                name: 'Signature Combo',
-                description: 'Tranquility Signature Manicure + Tranquility Signature Pedicure',
-                price: '$80'
             }
         ],
         acrylic: [
@@ -247,6 +222,56 @@ const HomeServices = () => {
             {
                 name: 'Ombre - Tip Extension',
                 price: '$55+'
+            }
+        ],
+        waxing: [
+            {
+                name: 'Eye Brow',
+                price: '$12 & up'
+            },
+            {
+                name: 'Lip',
+                price: '$6'
+            },
+            {
+                name: 'Chin',
+                price: '$15 & up'
+            },
+            {
+                name: 'Sideburn',
+                price: '$20'
+            },
+            {
+                name: 'Full Face',
+                price: '$40 & up'
+            },
+            {
+                name: 'Half Arm',
+                price: '$30 & up'
+            },
+            {
+                name: 'Full Arm',
+                price: '$60 & up'
+            },
+            {
+                name: 'Underarm',
+                price: '$30 & up'
+            },
+            {
+                name: 'Half Leg',
+                price: '$40 & up'
+            },
+            {
+                name: 'Full Leg',
+                price: '$70 & up'
+            },
+            {
+                name: 'Eyebrow Threading',
+                price: '$12'
+            },
+            {
+                name: 'Eyebrow Tinting',
+                price: '$18'
             }
         ],
         kids: [
@@ -335,7 +360,7 @@ const HomeServices = () => {
                             </div>
 
                             {/* Add-ons Section */}
-                            {activeCategory !== 'kids' && (
+                            {activeCategory !== 'kids' && activeCategory !== 'waxing' && (
                                 <div className="add-ons-section">
                                     <h3>Add-Ons</h3>
                                     <div className="add-ons-grid">

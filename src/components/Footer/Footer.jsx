@@ -1,9 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logoImage from '../../assets/images/logo.png';
 import mapImage from '../../assets/images/map.png';
 import './Footer.css';
 
 const Footer = () => {
+    const handleNavClick = (e, path) => {
+        e.preventDefault();
+
+        if (path.includes('#')) {
+            const [route, hash] = path.split('#');
+
+            if (route === '/') {
+                // Handle home page sections
+                if (window.location.pathname !== '/') {
+                    window.location.href = path;
+                } else {
+                    const element = document.getElementById(hash);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            } else {
+                // Handle other routes with hash
+                window.location.href = path;
+            }
+        } else {
+            // Handle routes without hash
+            window.location.href = path;
+        }
+    };
+
     return (
         <footer className="footer-luxury">
             <div className="container">
@@ -24,21 +51,21 @@ const Footer = () => {
                             <div className="link-group">
                                 <h4>Quick Links</h4>
                                 <ul>
-                                    <li><a href="#home">Home</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#services">Services</a></li>
-                                    <li><a href="#gallery">Gallery</a></li>
-                                    <li><a href="#contact">Contact</a></li>
+                                    <li><Link to="/" onClick={(e) => handleNavClick(e, '/#home')}>Home</Link></li>
+                                    <li><a href="/#about" onClick={(e) => handleNavClick(e, '/#about')}>About</a></li>
+                                    <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Services</Link></li>
+                                    <li><Link to="/gallery" onClick={() => window.scrollTo(0, 0)}>Gallery</Link></li>
+                                    <li><a href="/#contact" onClick={(e) => handleNavClick(e, '/#contact')}>Contact</a></li>
                                 </ul>
                             </div>
                             <div className="link-group">
                                 <h4>Services</h4>
                                 <ul>
-                                    <li><a href="#services">Manicures</a></li>
-                                    <li><a href="#services">Pedicures</a></li>
-                                    <li><a href="#services">Nail Extensions</a></li>
-                                    <li><a href="#services">Nail Art</a></li>
-                                    <li><a href="#services">Spa Treatments</a></li>
+                                    <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Manicures</Link></li>
+                                    <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Pedicures</Link></li>
+                                    <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Acrylic Nails</Link></li>
+                                    <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Nail Art</Link></li>
+                                    <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Waxing & Threading</Link></li>
                                 </ul>
                             </div>
                             <div className="link-group">
@@ -50,8 +77,8 @@ const Footer = () => {
                                     <a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                                         <i className="fab fa-instagram"></i>
                                     </a>
-                                    <a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-                                        <i className="fab fa-pinterest"></i>
+                                    <a href="https://maps.app.goo.gl/15itMo8ZRYiSrA3M8" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+                                        <i className="fab fa-google"></i>
                                     </a>
                                     <a href="https://www.facebook.com/TranquilityNS/" target="_blank" rel="noopener noreferrer" aria-label="Yelp">
                                         <i className="fab fa-yelp"></i>
