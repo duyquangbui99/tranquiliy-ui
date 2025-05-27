@@ -85,7 +85,7 @@ const Home = () => {
             name: "Solar Nails (Acrylic)",
             image: nailArtImage,
             description: "Durable solar nail extensions with natural pink and white finish",
-            category: "solar"
+            category: "gel"
         },
         {
             id: 5,
@@ -170,10 +170,10 @@ const Home = () => {
         // Store the category in sessionStorage so HomeServices can read it
         sessionStorage.setItem('selectedCategory', category);
         navigate('/services');
-        // Scroll to top after navigation
+        // Scroll to top after navigation with longer delay for mobile
         setTimeout(() => {
-            window.scrollTo(0, 0);
-        }, 100);
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }, 300);
     };
 
     return (
@@ -306,7 +306,16 @@ const Home = () => {
                     </div>
 
                     <div className="home-gallery-cta">
-                        <Link to="/gallery" className="view-gallery-btn" onClick={() => window.scrollTo(0, 0)}>
+                        <Link to="/gallery#gallery" className="view-gallery-btn" onClick={() => {
+                            setTimeout(() => {
+                                const galleryElement = document.getElementById('gallery');
+                                if (galleryElement) {
+                                    galleryElement.scrollIntoView({ behavior: 'smooth' });
+                                } else {
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }
+                            }, 300);
+                        }}>
                             View Full Gallery
                             <i className="fas fa-arrow-right"></i>
                         </Link>

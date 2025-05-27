@@ -24,6 +24,24 @@ const HomeGallery = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [showAll, setShowAll] = useState(false);
 
+    // Handle navigation to gallery section
+    React.useEffect(() => {
+        // Check if there's a hash in the URL
+        if (window.location.hash === '#gallery') {
+            setTimeout(() => {
+                const galleryElement = document.getElementById('gallery');
+                if (galleryElement) {
+                    galleryElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 300);
+        } else {
+            // Default scroll to top if no hash
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'instant' });
+            }, 100);
+        }
+    }, []);
+
     // Sample gallery items - you can replace these with your actual images
     const galleryItems = [
         {

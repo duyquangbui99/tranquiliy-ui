@@ -11,8 +11,17 @@ const HomeServices = () => {
 
     // Clear the sessionStorage after reading it and scroll to top
     React.useEffect(() => {
-        // Scroll to top when component mounts
-        window.scrollTo(0, 0);
+        // Scroll to top when component mounts - multiple attempts for mobile compatibility
+        window.scrollTo({ top: 0, behavior: 'instant' });
+
+        // Additional scroll attempts for mobile devices
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }, 100);
+
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }, 300);
 
         if (sessionStorage.getItem('selectedCategory')) {
             sessionStorage.removeItem('selectedCategory');
