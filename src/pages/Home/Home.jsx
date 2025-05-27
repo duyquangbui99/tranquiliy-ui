@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation';
 import Footer from '../../components/Footer/Footer';
 import './Home.css';
@@ -24,6 +24,7 @@ import nail9Image from '../../assets/images/gallery/gallery9.png';
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const navigate = useNavigate();
 
     const testimonials = [
         {
@@ -62,38 +63,45 @@ const Home = () => {
             id: 1,
             name: "Classic Manicure",
             image: manicureImage,
-            description: "Professional nail care with cuticle treatment and polish application"
+            description: "Professional nail care with cuticle treatment and polish application",
+            category: "manicure"
         },
         {
             id: 2,
             name: "Luxury Pedicure",
             image: pedicureImage,
-            description: "Relaxing foot treatment with exfoliation and massage"
+            description: "Relaxing foot treatment with exfoliation and massage",
+            category: "pedicure"
         },
         {
             id: 3,
             name: "Acrylic Nails",
             image: nailEnhanceImage,
-            description: "Long-lasting acrylic nail extensions with perfect finish"
+            description: "Long-lasting acrylic nail extensions with perfect finish",
+            category: "acrylic"
         },
         {
             id: 4,
-            name: "Nail Art Design",
+            name: "Solar Nails (Acrylic)",
             image: nailArtImage,
-            description: "Custom artistic designs created by our skilled technicians"
+            description: "Custom artistic designs created by our skilled technicians",
+            category: "gel"
         },
         {
             id: 5,
-            name: "Waxing & Threading",
-            image: waxingImage,
-            description: "Professional hair removal services for smooth skin"
+            name: "Dipping Powder",
+            image: packageImage,
+            description: "Complete wellness packages for ultimate relaxation",
+            category: "dipping"
         },
         {
             id: 6,
-            name: "Spa Packages",
-            image: packageImage,
-            description: "Complete wellness packages for ultimate relaxation"
-        }
+            name: "Waxing & Threading",
+            image: waxingImage,
+            description: "Professional hair removal services for smooth skin",
+            category: "waxing"
+        },
+
     ];
 
     const galleryImages = [
@@ -155,6 +163,17 @@ const Home = () => {
         } else {
             alert('Please fill out all required fields.');
         }
+    };
+
+    // Function to handle service navigation
+    const handleServiceNavigation = (category) => {
+        // Store the category in sessionStorage so HomeServices can read it
+        sessionStorage.setItem('selectedCategory', category);
+        navigate('/services');
+        // Scroll to top after navigation
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 100);
     };
 
     return (
@@ -256,7 +275,7 @@ const Home = () => {
                                 <div className="service-content">
                                     <h3>{service.name}</h3>
                                     <p>{service.description}</p>
-                                    <Link to="/services" className="view-more-btn">
+                                    <Link to="/services" className="view-more-btn" onClick={() => handleServiceNavigation(service.category)}>
                                         View Details <i className="fas fa-arrow-right"></i>
                                     </Link>
                                 </div>

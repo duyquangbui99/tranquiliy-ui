@@ -4,8 +4,20 @@ import Footer from '../../components/Footer/Footer';
 import './HomeServices.css';
 
 const HomeServices = () => {
-    const [activeCategory, setActiveCategory] = useState('pedicure');
+    // Check if there's a selected category from navigation
+    const initialCategory = sessionStorage.getItem('selectedCategory') || 'pedicure';
+    const [activeCategory, setActiveCategory] = useState(initialCategory);
     const servicesMainRef = useRef(null);
+
+    // Clear the sessionStorage after reading it and scroll to top
+    React.useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+
+        if (sessionStorage.getItem('selectedCategory')) {
+            sessionStorage.removeItem('selectedCategory');
+        }
+    }, []);
 
     const handleCategoryClick = (categoryId) => {
         setActiveCategory(categoryId);
