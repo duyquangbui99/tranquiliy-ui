@@ -110,7 +110,7 @@
 .book-btn {
     background: var(--gradient-primary);
     color: var(--color-white);
-    padding: 14px 28px;
+    padding: 16px 28px;
     text-decoration: none;
     border-radius: var(--radius-button);
     font-weight: 600;

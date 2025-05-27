@@ -85,7 +85,7 @@ const Home = () => {
             name: "Solar Nails (Acrylic)",
             image: nailArtImage,
             description: "Durable solar nail extensions with natural pink and white finish",
-            category: "gel"
+            category: "solar"
         },
         {
             id: 5,
