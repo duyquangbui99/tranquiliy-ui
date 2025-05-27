@@ -199,7 +199,7 @@ const HomeServices = () => {
             },
             {
                 name: 'Solar Nails - Clear Pink Solar - Fill',
-                price: '$35+'
+                price: '$40+'
             },
             {
                 name: 'Gel Polish (Shellac) - Full Set',
