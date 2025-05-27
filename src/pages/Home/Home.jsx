@@ -170,10 +170,10 @@ const Home = () => {
         // Store the category in sessionStorage so HomeServices can read it
         sessionStorage.setItem('selectedCategory', category);
         navigate('/services');
-        // Scroll to top after navigation with longer delay for mobile
+        // Scroll to top after navigation with smooth behavior
         setTimeout(() => {
-            window.scrollTo({ top: 0, behavior: 'instant' });
-        }, 300);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
     };
 
     return (
@@ -314,7 +314,7 @@ const Home = () => {
                                 } else {
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }
-                            }, 300);
+                            }, 100);
                         }}>
                             View Full Gallery
                             <i className="fas fa-arrow-right"></i>

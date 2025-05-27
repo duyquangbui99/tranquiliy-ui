@@ -22,13 +22,32 @@ const Footer = () => {
                     }
                 }
             } else {
-                // Handle other routes with hash
-                window.location.href = path;
+                // Handle other routes with hash - navigate and then scroll
+                const targetRoute = route || '/';
+                window.location.href = targetRoute;
+                setTimeout(() => {
+                    const element = document.getElementById(hash);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
             }
         } else {
-            // Handle routes without hash
+            // Handle routes without hash - smooth scroll to top
             window.location.href = path;
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 100);
         }
+    };
+
+    // Function to handle service category navigation
+    const handleServiceNavigation = (category) => {
+        sessionStorage.setItem('selectedCategory', category);
+        window.location.href = '/services';
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
     };
 
     return (
@@ -54,18 +73,19 @@ const Footer = () => {
                                     <li><Link to="/" onClick={(e) => handleNavClick(e, '/#home')}>Home</Link></li>
                                     <li><a href="/#about" onClick={(e) => handleNavClick(e, '/#about')}>About</a></li>
                                     <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Services</Link></li>
-                                    <li><Link to="/gallery" onClick={() => window.scrollTo(0, 0)}>Gallery</Link></li>
+                                    <li><Link to="/gallery" onClick={() => setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100)}>Gallery</Link></li>
                                     <li><a href="/#contact" onClick={(e) => handleNavClick(e, '/#contact')}>Contact</a></li>
                                 </ul>
                             </div>
                             <div className="link-group">
                                 <h4>Services</h4>
                                 <ul>
-                                    <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Manicures</Link></li>
-                                    <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Pedicures</Link></li>
-                                    <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Acrylic Nails</Link></li>
-                                    <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Nail Art</Link></li>
-                                    <li><Link to="/services" onClick={(e) => handleNavClick(e, '/services#services')}>Waxing & Threading</Link></li>
+                                    <li><a href="/services" onClick={(e) => { e.preventDefault(); handleServiceNavigation('manicure'); }}>Manicures</a></li>
+                                    <li><a href="/services" onClick={(e) => { e.preventDefault(); handleServiceNavigation('pedicure'); }}>Pedicures</a></li>
+                                    <li><a href="/services" onClick={(e) => { e.preventDefault(); handleServiceNavigation('acrylic'); }}>Acrylic Nails</a></li>
+                                    <li><a href="/services" onClick={(e) => { e.preventDefault(); handleServiceNavigation('solar'); }}>Solar Nails</a></li>
+                                    <li><a href="/services" onClick={(e) => { e.preventDefault(); handleServiceNavigation('dipping'); }}>Dipping Powder</a></li>
+                                    <li><a href="/services" onClick={(e) => { e.preventDefault(); handleServiceNavigation('waxing'); }}>Waxing & Threading</a></li>
                                 </ul>
                             </div>
                             <div className="link-group">
