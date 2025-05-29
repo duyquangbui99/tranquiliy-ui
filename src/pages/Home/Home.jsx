@@ -24,7 +24,16 @@ import nail9Image from '../../assets/images/gallery/gallery9.png';
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [selectedImage, setSelectedImage] = useState(null);
     const navigate = useNavigate();
+
+    const handleImageClick = (image) => {
+        setSelectedImage(image);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
 
     const testimonials = [
         {
@@ -285,7 +294,12 @@ const Home = () => {
 
                     <div className="gallery-grid-luxury">
                         {galleryImages.map((image, index) => (
-                            <div key={index} className="gallery-item-luxury">
+                            <div
+                                key={index}
+                                className="gallery-item-luxury"
+                                onClick={() => handleImageClick({ src: image, alt: `Nail Design ${index + 1}` })}
+                                style={{ cursor: 'pointer' }}
+                            >
                                 <img src={image} alt={`Nail Design ${index + 1}`} />
                                 <div className="gallery-overlay">
                                     <i className="fas fa-search-plus"></i>
@@ -310,6 +324,15 @@ const Home = () => {
                         </Link>
                     </div>
                 </div>
+                {/* Image Modal */}
+                {selectedImage && (
+                    <div className="gallery-modal" onClick={closeModal}>
+                        <div className="modal-content">
+                            <span className="close-modal">&times;</span>
+                            <img src={selectedImage.src} alt={selectedImage.alt} />
+                        </div>
+                    </div>
+                )}
             </section>
 
             {/* Testimonials */}
