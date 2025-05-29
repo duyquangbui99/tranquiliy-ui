@@ -219,31 +219,20 @@ const Home = () => {
                                         <i className="fas fa-award"></i>
                                         <span>Professional Excellence</span>
                                     </div>
+
+                                    <div className="feature">
+                                        <i className="fas fa-map-marker-alt"></i>
+                                        <span>4012 S Yale Ave, Tulsa, OK 74135</span>
+                                    </div>
+                                </div>
+                                <div className="about-features">
                                     <div className="feature">
                                         <i className="fas fa-heart"></i>
                                         <span>Personalized Care</span>
                                     </div>
                                     <div className="feature">
-                                        <i className="fas fa-leaf"></i>
-                                        <span>Premium Products</span>
-                                    </div>
-                                </div>
-                                <div className="location-item">
-                                    <div className="location-icon">
-                                        <i className="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div className="location-details">
-                                        <h4>Visit Us</h4>
-                                        <p>4012 S Yale Ave, Tulsa, OK 74135</p>
-                                    </div>
-                                </div>
-                                <div className="location-item">
-                                    <div className="location-icon">
                                         <i className="fas fa-clock"></i>
-                                    </div>
-                                    <div className="location-details">
-                                        <h4>Open Hours</h4>
-                                        <p>Mon-Sat: 9:30AM - 7:30PM<br />Sunday: 11:30AM - 6:00PM</p>
+                                        <span>Mon-Sat: 9:30AM - 7:30PM<br />Sunday: 11:30AM - 6:00PM</span>
                                     </div>
                                 </div>
                             </div>

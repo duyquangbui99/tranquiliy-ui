@@ -142,61 +142,35 @@
 .about-features {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
 }
 
 .feature {
     display: flex;
     align-items: center;
     gap: var(--spacing-lg);
+    padding: var(--spacing-md) 0;
 }
 
 .feature i {
     color: var(--primary-brown);
     font-size: 20px;
     width: 24px;
+    flex-shrink: 0;
 }
 
 .feature span {
     color: var(--text-primary);
     font-weight: 500;
     font-size: 1rem;
+    line-height: 1.5;
 }
 
 .about-info {
     display: flex;
-    justify-content: center;
-}
-
-.location-item {
-    display: flex;
-    align-items: flex-start;
-}
-
-.location-icon {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-brown);
-    font-size: 16px;
-    flex-shrink: 0;
-    padding-bottom: 15px;
-}
-
-.location-details h4 {
-    color: var(--text-primary);
-    margin-bottom: 8px;
-    font-size: 1rem;
-}
-
-.location-details p {
-    color: var(--text-primary);
-    line-height: 1.6;
-    margin: 0;
-    font-size: 0.95rem;
-    font-weight: 500;
+    flex-direction: row;
+    gap: var(--spacing-xxl);
+    margin-top: var(--spacing-lg);
+    justify-content: space-between;
 }
 
 .about-image-luxury {
@@ -993,7 +967,7 @@
     .about-content-luxury,
     .contact-content-luxury {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 40px;
     }
 
     .about-location-info {
@@ -1010,6 +984,7 @@
 }
 
 @media (max-width: 768px) {
+
 
     .call-us-fixed {
         right: 20px;
@@ -1039,6 +1014,23 @@
     .testimonials-header h2,
     .contact-info-luxury h2 {
         font-size: 2.5rem;
+    }
+
+    .about-features {
+        gap: var(--spacing-sm);
+    }
+
+    .about-info {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .feature {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .feature span {
+        font-size: 0.95rem;
     }
 
     .services-grid-luxury {
