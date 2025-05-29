@@ -230,14 +230,18 @@ const Home = () => {
                                     </div>
 
                                     <div className="feature">
-                                        <i className="fas fa-map-marker-alt"></i>
-                                        <span>4012 S Yale Ave, Tulsa, OK 74135</span>
+                                        <i className="fas fa-heart"></i>
+                                        <span>Personalized Care</span>
+                                    </div>
+                                    <div className="feature">
+                                        <i className="fas fa-leaf"></i>
+                                        <span>Premium Products</span>
                                     </div>
                                 </div>
                                 <div className="about-features">
                                     <div className="feature">
-                                        <i className="fas fa-heart"></i>
-                                        <span>Personalized Care</span>
+                                        <i className="fas fa-map-marker-alt"></i>
+                                        <span>4012 S Yale Ave, Tulsa, OK 74135</span>
                                     </div>
                                     <div className="feature">
                                         <i className="fas fa-clock"></i>

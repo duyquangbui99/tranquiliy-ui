@@ -39,8 +39,6 @@ const HomeServices = () => {
         }
     };
 
-
-
     const categories = [
         {
             id: 'pedicure',

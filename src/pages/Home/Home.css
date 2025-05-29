@@ -168,7 +168,7 @@
 .about-info {
     display: flex;
     flex-direction: row;
-    gap: var(--spacing-xxl);
+    gap: var(--spacing-sm);
     margin-top: var(--spacing-lg);
     justify-content: space-between;
 }
