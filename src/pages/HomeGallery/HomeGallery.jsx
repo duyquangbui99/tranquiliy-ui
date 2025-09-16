@@ -18,6 +18,10 @@ import nail15Image from '../../assets/images/gallery/gallery15.png';
 import nail16Image from '../../assets/images/gallery/gallery16.png';
 import nail17Image from '../../assets/images/gallery/gallery17.png';
 import nail18Image from '../../assets/images/gallery/gallery18.png';
+import nail19Image from '../../assets/images/gallery/gallery19.png';
+import nail20Image from '../../assets/images/gallery/gallery20.png';
+import nail21Image from '../../assets/images/gallery/gallery21.png';
+import nail22Image from '../../assets/images/gallery/gallery22.png';
 import './HomeGallery.css';
 
 const HomeGallery = () => {
@@ -150,6 +154,30 @@ const HomeGallery = () => {
             id: 18,
             src: nail18Image,
             alt: 'Nail Art Design 18',
+            category: 'nail-art'
+        },
+        {
+            id: 19,
+            src: nail19Image,
+            alt: 'Nail Art Design 19',
+            category: 'nail-art'
+        },
+        {
+            id: 20,
+            src: nail20Image,
+            alt: 'Nail Art Design 20',
+            category: 'nail-art'
+        },
+        {
+            id: 21,
+            src: nail21Image,
+            alt: 'Nail Art Design 21',
+            category: 'nail-art'
+        },
+        {
+            id: 22,
+            src: nail22Image,
+            alt: 'Nail Art Design 22',
             category: 'nail-art'
         }
 
