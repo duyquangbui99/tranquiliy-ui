@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import './Home.css';
 
 // Import all images
-import chairsImage from '../../assets/images/chairs.jpg';
+import chairsImage from '../../assets/images/chairs.webp';
 import pedicureImage from '../../assets/images/pedicure.jpg';
 import manicureImage from '../../assets/images/manicure.jpg';
 import nailEnhanceImage from '../../assets/images/nailenhance.jpg';
