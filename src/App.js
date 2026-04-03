@@ -6,7 +6,7 @@ import HomeGallery from './pages/HomeGallery/HomeGallery';
 import Popup from './components/Popup/Popup';
 import easterImg from './assets/images/popup/easter-update.webp';
 import './App.css';
-
+import '@fortawesome/fontawesome-free/css/all.min.css';
 function App() {
   const [showPopup, setShowPopup] = useState(true);
 

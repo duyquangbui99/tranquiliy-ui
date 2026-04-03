@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation';
 import Footer from '../../components/Footer/Footer';
 import './Home.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 // Import all images
 import chairsImage from '../../assets/images/chairs.webp';
