@@ -240,7 +240,7 @@ const HomeGallery = () => {
                     <div className="gallery-modal" onClick={closeModal}>
                         <div className="modal-content">
                             <span className="close-modal">&times;</span>
-                            <img src={selectedImage.src} alt={selectedImage.alt} />
+                            <img src={selectedImage.src} alt={selectedImage.alt} loading="lazy" />
                         </div>
                     </div>
                 )}
