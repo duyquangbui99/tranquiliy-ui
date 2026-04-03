@@ -6,12 +6,12 @@ import './Home.css';
 
 // Import all images
 import chairsImage from '../../assets/images/chairs.webp';
-import pedicureImage from '../../assets/images/pedicure.jpg';
-import manicureImage from '../../assets/images/manicure.jpg';
-import nailEnhanceImage from '../../assets/images/nailenhance.jpg';
-import nailArtImage from '../../assets/images/nailart.jpg';
-import waxingImage from '../../assets/images/waxing.jpg';
-import packageImage from '../../assets/images/package.jpg';
+import pedicureImage from '../../assets/images/pedicure.webp';
+import manicureImage from '../../assets/images/manicure.webp';
+import nailEnhanceImage from '../../assets/images/nailenhance.webp';
+import nailArtImage from '../../assets/images/nailart.webp';
+import waxingImage from '../../assets/images/waxing.webp';
+import packageImage from '../../assets/images/package.webp';
 import nail1Image from '../../assets/images/gallery/gallery1.jpg';
 import nail2Image from '../../assets/images/gallery/gallery2.jpg';
 import nail3Image from '../../assets/images/gallery/gallery3.jpg';
