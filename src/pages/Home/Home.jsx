@@ -5,21 +5,21 @@ import Footer from '../../components/Footer/Footer';
 import './Home.css';
 
 // Import all images
-import chairsImage from '../../assets/images/chairs.png';
-import pedicureImage from '../../assets/images/pedicure.png';
-import manicureImage from '../../assets/images/manicure.png';
-import nailEnhanceImage from '../../assets/images/nailenhance.png';
-import nailArtImage from '../../assets/images/nailart.png';
-import waxingImage from '../../assets/images/waxing.png';
-import packageImage from '../../assets/images/package.png';
-import nail1Image from '../../assets/images/gallery/gallery1.png';
-import nail2Image from '../../assets/images/gallery/gallery2.png';
-import nail3Image from '../../assets/images/gallery/gallery3.png';
-import nail4Image from '../../assets/images/gallery/gallery4.png';
-import nail5Image from '../../assets/images/gallery/gallery5.png';
-import nail6Image from '../../assets/images/gallery/gallery6.png';
-import nail8Image from '../../assets/images/gallery/gallery8.png';
-import nail9Image from '../../assets/images/gallery/gallery9.png';
+import chairsImage from '../../assets/images/chairs.jpg';
+import pedicureImage from '../../assets/images/pedicure.jpg';
+import manicureImage from '../../assets/images/manicure.jpg';
+import nailEnhanceImage from '../../assets/images/nailenhance.jpg';
+import nailArtImage from '../../assets/images/nailart.jpg';
+import waxingImage from '../../assets/images/waxing.jpg';
+import packageImage from '../../assets/images/package.jpg';
+import nail1Image from '../../assets/images/gallery/gallery1.jpg';
+import nail2Image from '../../assets/images/gallery/gallery2.jpg';
+import nail3Image from '../../assets/images/gallery/gallery3.jpg';
+import nail4Image from '../../assets/images/gallery/gallery4.jpg';
+import nail5Image from '../../assets/images/gallery/gallery5.jpg';
+import nail6Image from '../../assets/images/gallery/gallery6.jpg';
+import nail8Image from '../../assets/images/gallery/gallery8.jpg';
+import nail9Image from '../../assets/images/gallery/gallery9.jpg';
 
 
 const Home = () => {

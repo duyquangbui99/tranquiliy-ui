@@ -4,7 +4,7 @@ import Home from './pages/Home/Home';
 import HomeServices from './pages/HomeServices/HomeServices';
 import HomeGallery from './pages/HomeGallery/HomeGallery';
 import Popup from './components/Popup/Popup';
-import easterImg from './assets/images/popup/easter-update.png';
+import easterImg from './assets/images/popup/easter-update.jpg';
 import './App.css';
 
 function App() {

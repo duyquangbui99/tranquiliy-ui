@@ -13,7 +13,7 @@
     padding: 40px var(--spacing-lg);
     position: relative;
     background-color: var(--bg-primary);
-    background-image: url('../../assets/images/gallery/gallery-bg.png');
+    background-image: url('../../assets/images/gallery/gallery-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
