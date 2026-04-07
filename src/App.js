@@ -8,7 +8,7 @@ import easterImg from './assets/images/popup/easter-update.webp';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 function App() {
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
 
   return (
     <div className="App">
