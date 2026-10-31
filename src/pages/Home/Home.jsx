@@ -19,8 +19,8 @@ import nail3Image from '../../assets/images/gallery/gallery3.jpg';
 import nail4Image from '../../assets/images/gallery/gallery4.jpg';
 import nail5Image from '../../assets/images/gallery/gallery5.jpg';
 import nail6Image from '../../assets/images/gallery/gallery6.jpg';
-import nail8Image from '../../assets/images/gallery/gallery8.jpg';
-import nail9Image from '../../assets/images/gallery/gallery9.jpg';
+import nail24Image from '../../assets/images/gallery/gallery24.jpg';
+import nail25Image from '../../assets/images/gallery/gallery25.jpg';
 
 
 const Home = () => {
@@ -115,14 +115,14 @@ const Home = () => {
     ];
 
     const galleryImages = [
+        nail25Image,
+        nail24Image,
         nail1Image,
         nail2Image,
         nail3Image,
         nail4Image,
         nail5Image,
-        nail6Image,
-        nail9Image,
-        nail8Image
+        nail6Image
     ];
 
     // Create a circular array of testimonials for smooth infinite scrolling
